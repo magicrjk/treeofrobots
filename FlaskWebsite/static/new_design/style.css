@@ -1,0 +1,50 @@
+* body {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+
+
+	
+}
+
+* greentext {
+		color : #7ABF2D;
+}
+
+* orangetext {
+		color : #FF8600;
+}
+
+
+* headline {
+		color : #7ABF2D;
+		font-size: 22pt;
+		font-weight: bold;
+}
+
+
+
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}

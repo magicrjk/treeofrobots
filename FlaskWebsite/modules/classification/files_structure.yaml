@@ -1,0 +1,70 @@
+#Contains new_robot folder structure and informations
+---
+Force_Sensing: #name folder in new_robot/ 
+  destination: 01_Force_Sensing #name of the destination folder 
+  accrepres: #name folder in new_robot/Force_Sensing/ -> copy files from new_robot/Force_Sensing/accrepres/
+    mandatory: true #throws error if folder new_robot/Force_Sensing/accrepres/ is absent
+    num_files: ">=30" #throws error if #files in  new_robot/Force_Sensing/accrepres/ does not respect the condition
+    destination: accrepres #name of the destination subfolder -> 01_Force_Sensing/<#robot>_accrepres
+    measurement_point: "C" #this creates the folder "C_files" (this will be defined by the user in the future) -> files are copied in -> 01_Force_Sensing/<#robot>_accrepres/C_files    
+  timeconsistency:  
+    mandatory: true
+    num_files: "==1"
+    destination: timeconsistency
+Force_Controller:
+  destination: 02_Force_Controller 
+  Bc: 
+    mandatory: false
+    # num_files: "==1"
+    destination: [Bc,cB]
+  AcF_PcF_REScF_OV_TS:
+    mandatory: true
+    num_files: ">=1"
+    destination: [AcF_PcF_REScF_OV_TS,c_accrepres]
+    measurement_point: "C"
+  MAF:
+    mandatory: true
+    num_files: ">=1"
+    destination: [MAF,minforce]
+    measurement_point: "C"
+  MVC_IS:
+    mandatory: true
+    num_files: ">=1"
+    destination: [MVC_IS,c_accrepres]
+    measurement_point: "C"
+Force_Reaction:
+  destination: 03_Force_Reaction
+  contactsens: 
+    mandatory: false
+    destination: contactsens
+    measurement_point: "C"
+Human_Safety:
+  destination: 04_Human_Safety
+  colltests:
+    mandatory: true
+    num_files: ">=1"
+    measurement_point: "C"
+    destination: colltests
+Teaching:
+  destination: 05_Teaching
+  GF_GD_GE_ME:
+    mandatory: true
+    num_files: ">=1"
+    measurement_point: "C"
+    destination: [GF_GD_GE_ME,guidetests] 
+  MF:
+    mandatory: true
+    num_files: ">=1"
+    measurement_point: "C"
+    destination: [MF,guidingforce_slow]     
+Motion_Performance:
+  destination: 06_Motion_Performance
+  motion_performance:
+    mandatory: true
+    num_files: ">=1"
+    destination: motion_performance
+Robot_Ext_URDFs:
+  destination: 07_Robot_Ext_URDFs
+  ext_urdf:
+    mandatory: true
+    destination: ext_urdf 

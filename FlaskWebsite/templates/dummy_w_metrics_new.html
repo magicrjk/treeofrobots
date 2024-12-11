@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new_design/' + 'style.css') }}">
+<meta charset="utf-8">
+<title>dummy_metrics_results</title>
+<style type="text/css">
+body,td,th {
+
+}
+
+</style>
+</head>
+<body>
+    <table width="100%" border="0">
+        <tbody>
+            <tr>
+                <td height="50"></td>
+            </tr>
+        <tr>
+            <td align="center"><strong>Your Robot: {{text_input}}</strong></td>
+        </tr>
+        <tr>
+            <td align="center" height="5"><img src="{{url_for('static', filename='new_design/' + 'separate.png') }}" width="500" height="2" alt=""/></td>
+        </tr>
+        
+        </tbody>
+    </table>
+    <table width="100%" border="0">
+        <tbody>
+            <tr>
+                <td align="center"><strong>Tactility Spectrum</strong></td>
+            </tr>
+            <tr>
+                <td>
+
+    {% if images %}
+
+        <style>
+            .centered {
+            display: flex;
+            justify-content: center;
+            }
+           
+            .row {
+                display: flex;
+            }
+            .column {
+                flex: 49.9%; /* Adjust as needed for the number of images */
+                padding: 5px;
+            }
+            </style>
+            
+        
+        <div class="centered">
+            <img src="{{ url_for('static', filename= images[0] + '.png') }}" alt="{{ images[0] }}" style="width:600px;">
+        </div>
+        </td>
+        </tr>
+
+        <tr>
+            <td align="center"><strong>Location in Genus</strong></td>
+        </tr>
+        <tr>
+            <td height="20"></td>
+        </tr>
+        <tr>
+            <td>
+        <div class="row">
+            <div class="column">
+                <p> Original Genus Classification </p>
+                <img src="{{ url_for('static', filename='summary_fitness/' + images[1] + '.png') }}" alt="{{ images[1] }}" style=" width:100%;margin-top: -100px;margin-left: -60px;">
+            </div>
+            <div class="column">
+                <p> Updated Genus Classification </p>
+                <img src="{{ url_for('static', filename='summary_fitness/' + images[2] + '.png') }}" alt="{{ images[2] }}" style=" width:100%;margin-top: -100px;margin-left: -60px;">
+            </div>
+        </div>
+    </td>
+</tr>
+
+       
+    {% else %}
+        <p>No images selected.</p>
+    {% endif %}
+      
+    
+    </tbody>
+    </table>
+</body>
+</html>

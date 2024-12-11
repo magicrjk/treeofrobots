@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new_design/' + 'style.css') }}">
+<meta charset="utf-8">
+<title>upload_new_robot</title>
+<style type="text/css">
+body,td,th {
+
+}
+</style>
+</head>
+
+<body>
+    <table width="100%" border="0">
+        <tbody>
+            <tr>
+                <td height="100"></td>
+            </tr>
+        <tr>
+            <td align="center"><strong>Upload:</strong></td>
+        </tr>
+        <tr>
+            <td align="center" height="50"><img src="{{url_for('static', filename='new_design/' + 'separate.png') }}" width="500" height="2" alt=""/></td>
+        </tr>
+        <tr>
+            <td align="center">
+    <form action="/upload_result_new" method="post" enctype="multipart/form-data">
+        <label for="text_input">Robot name:</label>
+        <input type="text" id="text_input" name="text_input"><br><br>
+        <label for="zipfile">Select a zip file:</label>
+        <input type="file" id="zipfile" name="zipfile"><br><br>
+        <input type="submit" value="Upload">
+    </form>
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

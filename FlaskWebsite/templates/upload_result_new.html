@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new_design/' + 'style.css') }}">
+<meta charset="utf-8">
+<title>upload_files</title>
+<style type="text/css">
+body,td,th {
+
+}
+</style>
+</head>
+
+
+<body>
+    <table width="100%" border="0">
+        <tbody>
+            <tr>
+                <td height="100"></td>
+            </tr>
+        <tr>
+            <td align="center"><strong>Your files:</strong></td>
+        </tr>
+        <tr>
+            <td align="center">There should be a long list of files on the buttom starting with the folder name new_robot/ </td>
+        </tr>
+        <tr>
+            <td align="center" height="50"><img src="{{url_for('static', filename='new_design/' + 'separate.png') }}" width="500" height="2" alt=""/></td>
+        </tr>
+        <tr>
+            <td align="center">
+                <p>For data evaluation</p>
+    <form action="/upload_result/new_robot_results" method="post">
+        <input type="submit" value="Continue">
+        <p>Please wait up to <b>200s</b> while your request is processed.</p> 
+    </form>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" height="50"><img src="{{url_for('static', filename='new_design/' + 'separate.png') }}" width="500" height="2" alt=""/></td>
+        </tr>
+        <tr>
+    <td align="center">
+        <strong>Check uploaded files:</strong>
+    <ul>
+        {% for file_name in file_names %}
+            <li>{{ file_name }}</li>
+        {% endfor %}
+    </ul>
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="Franka Research 3" serial_number= "73681343" system_version="5.2.0" datasheet="https://download.franka.de/Franka-Research-3_Datasheet_v1.1_August2022.pdf">
+	<link name="fr3_link1" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="fr3_link2" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="fr3_link3" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="fr3_link4" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="fr3_link5" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="fr3_link6" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="fr3_link7" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+
+	<link name="fr3_link8" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+
+	<joint name="fr3_joint1" parent_link="fr3_link1" child_link="fr3_link2"/>
+	<joint name="fr3_joint2" parent_link="fr3_link2" child_link="fr3_link3"/>
+	<joint name="fr3_joint3" parent_link="fr3_link3" child_link="fr3_link4"/>
+	<joint name="fr3_joint4" parent_link="fr3_link4" child_link="fr3_link5"/>
+	<joint name="fr3_joint5" parent_link="fr3_link5" child_link="fr3_link6"/>
+	<joint name="fr3_joint6" parent_link="fr3_link6" child_link="fr3_link7"/>
+	<joint name="fr3_joint7" parent_link="fr3_link7" child_link="fr3_link8"/>
+
+	<sensor name="sensor1_torque" location="fr3_joint1" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor2_torque" location="fr3_joint2" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor3_torque" location="fr3_joint3" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor4_torque" location="fr3_joint4" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor5_torque" location="fr3_joint5" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor6_torque" location="fr3_joint6" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor7_torque" location="fr3_joint7" class="joint_torque" type="strain_gauge"/>
+
+	<sensor name="sensor1_touch" location="fr3_link1" class="touch" type="none"/>
+
+	<sensor name="sensor1_lnkmotion" location="fr3_link1" class="link_motion" type="none"/>
+	<sensor name="sensor2_lnkmotion" location="fr3_link2" class="link_motion" type="none"/>
+	<sensor name="sensor3_lnkmotion" location="fr3_link3" class="link_motion" type="none"/>
+	<sensor name="sensor4_lnkmotion" location="fr3_link4" class="link_motion" type="none"/>
+	<sensor name="sensor5_lnkmotion" location="fr3_link5" class="link_motion" type="none"/>
+	<sensor name="sensor6_lnkmotion" location="fr3_link6" class="link_motion" type="none"/>
+	<sensor name="sensor7_lnkmotion" location="fr3_link7" class="link_motion" type="none"/>
+	<sensor name="sensor8_lnkmotion" location="fr3_link8" class="link_motion" type="none"/>
+
+	<sensor name="sensor1_jntmotion" location="fr3_joint1" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor2_jntmotion" location="fr3_joint2" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor3_jntmotion" location="fr3_joint3" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor4_jntmotion" location="fr3_joint4" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor5_jntmotion" location="fr3_joint5" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor6_jntmotion" location="fr3_joint6" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor7_jntmotion" location="fr3_joint7" class="joint_motion" type="motor_encoders"/>
+
+	<sensor name="sensor1_current" location="fr3_joint1" class="current" type="hall_sensors"/>
+	<sensor name="sensor2_current" location="fr3_joint2" class="current" type="hall_sensors"/>
+	<sensor name="sensor3_current" location="fr3_joint3" class="current" type="hall_sensors"/>
+	<sensor name="sensor4_current" location="fr3_joint4" class="current" type="hall_sensors"/>
+	<sensor name="sensor5_current" location="fr3_joint5" class="current" type="hall_sensors"/>
+	<sensor name="sensor6_current" location="fr3_joint6" class="current" type="hall_sensors"/>
+	<sensor name="sensor7_current" location="fr3_joint7" class="current" type="hall_sensors"/>
+
+	<sensor name="sensor7_wrist" location="fr3_joint7" class="wrist_wrench" type="none"/>
+
+	<actuation name="control_box" class="electronics" type="remote"/>
+	<actuation name="transmission" class="transmission" type="gear"/>
+	<actuation name="drive" class="drive" type="bldc_motor"/>
+	<actuation name="technology" class="technology" type="electromechanical"/>
+
+	<control name="motion" class="motion" type="?"/>
+	<control name="handguiding" class="handguiding" type="?"/>
+	<control name="tactile" class="tactile" type="?"/>
+	
+
+	<base type="fixed" />
+	<top type="fixed" />
+</robot>

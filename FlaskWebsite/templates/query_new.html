@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new_design/' + 'style.css') }}">
+<meta charset="utf-8">
+<title>The Tree of Robots - Home</title>
+<style type="text/css">
+body,td,th {
+
+}
+</style>
+</head>
+<body>
+<table width="100%" border="0">
+    <tbody>
+        <tr>
+            <td height="100"></td>
+        </tr>
+    <tr>
+        <td align="center"><strong>Select (max. 3):</strong></td>
+    </tr>
+    <tr>
+        <td align="center" height="50"><img src="{{url_for('static', filename='new_design/' + 'separate.png') }}" width="500" height="2" alt=""/></td>
+    </tr>
+    <tr>
+        <td align="center">
+    <form action="/query_result" method="post">
+                <input type="checkbox" name="robot" value="1"> FE robot<br>
+                <input type="checkbox" name="robot" value="2"> LBR iiwa<br>
+                <input type="checkbox" name="robot" value="3"> UR5e<br>
+                <input type="checkbox" name="robot" value="4"> UR10e<br>
+                <input type="checkbox" name="robot" value="5"> Yu+<br>
+                <input type="checkbox" name="robot" value="6"> TM5-700<br>
+                <input type="checkbox" name="robot" value="7"> Gen3<br>
+                <input type="checkbox" name="robot" value="8"> FR3<br>
+                <input type="checkbox" name="robot" value="9"> M0609<br>
+                <input type="checkbox" name="robot" value="10"> GoFa<br>
+                <input type="checkbox" name="robot" value="11"> HC10<br>
+                <br>
+                <input type="submit" value="Submit">
+                <p>Please wait up to <b>20s</b> while your request is processed.</p> 
+            </form>
+        </td>
+     </tr>
+    </tbody>
+</table>
+</body>
+</html>

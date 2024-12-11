@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new_design/' + 'style.css') }}">  
+<meta charset="utf-8">  
+<title>single_process</title>
+<style type="text/css">
+body,td,th {
+
+}
+</style>
+</head>
+
+<body>
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+    <th width="50" scope="row">&nbsp;</th>
+      <td width="50">&nbsp;</td>
+      <td><span style="color: green;"><a href="/process/example2">Process Info</a></span></td>
+      <td width="20">&nbsp;</td>
+      <td><a href="/process/bos"><greentext>Basic Operations</greentext></a></td>
+      <td width="20">&nbsp;</td>
+      <td><a href="/process/qms">Process Quality Metrics</a></td>
+    </tr>
+  </tbody>
+</table>
+<table width="1200" border="0" align="center">
+  <tbody>
+    <tr>
+      <th height="10" scope="row">&nbsp;</th>
+    </tr>
+  </tbody>
+</table>
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+      <td width="20"><p>&nbsp;</p>
+      <td width="370">&nbsp;</td>
+      <!--<td width="100"><greentext>B.O. Feature</greentext></td>
+      <td width="20">&nbsp;</td>-->
+      <td width="320"><greentext>B.O.</greentext></td>
+      <td width="10">&nbsp;</td>
+      <td width="350"><greentext>Description</greentext></td>
+    </tr>
+  </tbody>
+</table>
+<table border="0" align="center">
+  <tbody>
+    <tr>
+      <td>
+      <th width="50"><img src="{{ url_for('static', filename='new_design/' + images[0] + '.png') }}" alt="" width="200" height="200"/></th></td>
+      <td width="50"><p>&nbsp;</p>
+        <p>&nbsp;</p></td>
+      <td><table width="500" border="0">
+        <tbody>
+          {% for i in range(text_input|length) %}
+          <tr>
+            <td style="vertical-align: middle; width: 250px;">
+              <p>{{ text_input[i] }}</p>
+            </td>
+            <td style="vertical-align: middle; width: 250px;">
+              <p>{{ text_input_2[i] }}</p>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<map name="map1a">
+  <area shape="circle" coords="117,54,38" href="robot01.html" target="_blank">
+</map>
+
+<map name="Map">
+  <area shape="poly" coords="174,258,259,257,332,294,393,442,295,483,172,440,110,279,134,262" href="metrics.html">
+  <area shape="poly" coords="467,433,566,383,607,294,602,180,457,207,375,283,374,347,401,436" href="tree.html">
+  <area shape="poly" coords="352,485,397,446,495,430,564,441,652,517,563,606,482,622,393,601,318,535" href="process.html">
+</map>
+</body>
+</html>

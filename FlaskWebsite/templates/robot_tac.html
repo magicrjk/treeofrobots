@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new_design/' + 'style.css') }}">
+<meta charset="utf-8"> 
+<title>robot_details</title>
+<style type="text/css">
+body,td,th {
+
+}
+</style>
+</head>
+
+<body>
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+      <th width="50" scope="row">&nbsp;</th>
+        <td width="50">&nbsp;</td>
+        <td><span style="color: green;"><a href="/robot2">Robot Info</a></span></td>
+        <td width="20">&nbsp;</td>
+        <td><a href="/robot_tac"><greentext>Tactility Spectrum</greentext></a></td>
+        <td width="20">&nbsp;</td>
+        <td><a href="/robot_loc">Location in Family Serial Manipulators</a></td>
+        <!--<td width="20">&nbsp;</td>
+        <td><a href="/robot_metrics">Metrics Info</a></td>-->
+      </tr>
+    </tbody>
+  </table>
+
+<table border="0" align="center" cellpadding="0" cellspacing="0" id="1">
+  <tbody>
+    <tr>
+      <!--<td><img src="{{ url_for('static', filename='new_design/' + images[3] + '.png') }}" alt="" width="200" height="200"/></td>
+      <td width="50">&nbsp;</td> -->
+      <td width="600"><table border="0" align="left" cellpadding="0" cellspacing="0">
+        <tbody>
+          
+          <tr>
+            <td height="10" align="left">&nbsp;</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="{{ url_for('static', filename=images[2]+ '.png') }}" alt="" width="600" height="600"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

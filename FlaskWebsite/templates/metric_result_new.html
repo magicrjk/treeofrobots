@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="utf-8"> 
+<title>query_form</title>
+<style type="text/css">
+body,td,th {
+
+}
+</style>
+</head>
+<body>
+<table width="100%" border="0">
+    <tbody>
+        <tr>
+            <td height="100"></td>
+        </tr>
+    <tr>
+        <td align="center"><strong>Tactile Fitness Atlas Entries:</strong></td>
+    </tr>
+    <tr>
+        <td align="center" height="50"><img src="{{url_for('static', filename='new_design/' + 'separate.png') }}" width="500" height="2" alt=""/></td>
+    </tr>
+    <tr>
+        <td align="center">
+    {% if images %}
+        
+            <style>
+                .row {
+                    display: flex;
+                }
+                .column {
+                    flex: 33.33%; /* Adjust as needed for the number of images */
+                    padding: 5px;
+                }
+            </style>
+            <div class="row">
+                {% for image in images %}
+                    <div class="column">
+                        <h2>{{ image }}</h2>
+                        <img src="{{ url_for('static', filename=image + '.png') }}" alt="{{ image }}" style="width:100%;">
+                    </div>
+                {% endfor %}
+            </div>
+            
+            
+            
+    {% else %}
+        <p>No images selected.</p>
+    {% endif %}
+</td>
+</tr>
+</tbody>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="Gen3" serial_number = "2020019602" system_version="2.3.0-r.227" datasheet="https://www.kinovarobotics.com/uploads/User-Guide-Gen3-R07.pdf">
+	<link name="gen_link1" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="gen_link2" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="gen_link3" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="gen_link4" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="gen_link5" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="gen_link6" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="gen_link7" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+
+	<link name="gen_link8" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+
+	<joint name="gen_joint1" parent_link="gen_link1" child_link="gen_link2"/>
+	<joint name="gen_joint2" parent_link="gen_link2" child_link="gen_link3"/>
+	<joint name="gen_joint3" parent_link="gen_link3" child_link="gen_link4"/>
+	<joint name="gen_joint4" parent_link="gen_link4" child_link="gen_link5"/>
+	<joint name="gen_joint5" parent_link="gen_link5" child_link="gen_link6"/>
+	<joint name="gen_joint6" parent_link="gen_link6" child_link="gen_link7"/>
+	<joint name="gen_joint7" parent_link="gen_link7" child_link="gen_link8"/>
+
+	<sensor name="sensor1_torque" location="gen_joint1" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor2_torque" location="gen_joint2" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor3_torque" location="gen_joint3" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor4_torque" location="gen_joint4" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor5_torque" location="gen_joint5" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor6_torque" location="gen_joint6" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor7_torque" location="gen_joint7" class="joint_torque" type="strain_gauge"/>
+
+	<sensor name="sensor1_touch" location="gen_link1" class="touch" type="none"/>
+
+	<sensor name="sensor1_lnkmotion" location="gen_link1" class="link_motion" type="none"/>
+	<sensor name="sensor2_lnkmotion" location="gen_link2" class="link_motion" type="none"/>
+	<sensor name="sensor3_lnkmotion" location="gen_link3" class="link_motion" type="none"/>
+	<sensor name="sensor4_lnkmotion" location="gen_link4" class="link_motion" type="none"/>
+	<sensor name="sensor5_lnkmotion" location="gen_link5" class="link_motion" type="none"/>
+	<sensor name="sensor6_lnkmotion" location="gen_link6" class="link_motion" type="none"/>
+	<sensor name="sensor7_lnkmotion" location="gen_link7" class="link_motion" type="none"/>
+	<sensor name="sensor8_lnkmotion" location="gen_link8" class="link_motion" type="none"/>
+
+	<sensor name="sensor1_jntmotion" location="gen_joint1" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor2_jntmotion" location="gen_joint2" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor3_jntmotion" location="gen_joint3" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor4_jntmotion" location="gen_joint4" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor5_jntmotion" location="gen_joint5" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor6_jntmotion" location="gen_joint6" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor7_jntmotion" location="gen_joint7" class="joint_motion" type="motor_encoders"/>
+
+	<sensor name="sensor1_current" location="gen_joint1" class="current" type="none"/>
+	<sensor name="sensor2_current" location="gen_joint2" class="current" type="none"/>
+	<sensor name="sensor3_current" location="gen_joint3" class="current" type="none"/>
+	<sensor name="sensor4_current" location="gen_joint4" class="current" type="none"/>
+	<sensor name="sensor5_current" location="gen_joint5" class="current" type="none"/>
+	<sensor name="sensor6_current" location="gen_joint6" class="current" type="none"/>
+	<sensor name="sensor7_current" location="gen_joint7" class="current" type="none"/>
+
+	<sensor name="sensor7_wrist" location="gen_joint7" class="wrist_wrench" type="none"/>
+
+	<actuation name="control_box" class="electronics" type="remote"/>
+	<actuation name="transmission" class="transmission" type="gear"/>
+	<actuation name="drive" class="drive" type="bldc_motor"/>
+	<actuation name="technology" class="technology" type="electromechanical"/>
+
+	<control name="motion" class="motion" type="?"/>
+	<control name="handguiding" class="handguiding" type="?"/>
+	<control name="tactile" class="tactile" type="none"/>
+	
+
+	<base type="fixed" />
+	<top type="fixed" />
+</robot>

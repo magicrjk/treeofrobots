@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new_design/' + 'style.css') }}">
+<meta charset="utf-8">
+<title>The Tree of Robots - Home</title>
+<style type="text/css">
+body,td,th {
+
+}
+
+.graphic {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-image: url("{{url_for('static', filename='new_design/' + 'tree.png') }}");
+  background-size: cover;
+  margin: 50px;
+}
+
+</style>
+
+<script>
+	function openFigure(robot_id) {
+		const url = `/robot?robot_id=${robot_id}`;
+  		window.open(url, 'newwindow', 'width=800,height=600');
+    	
+		return false;
+	}
+
+	function openDummyEntry() {
+		window.open("/dummy_choice/dummy", 'newwindow', 'width=800,height=600');
+		return false;
+	}
+
+	function openNewRobotResults() {
+		window.open("/upload_result/new_robot_results", 'newwindow', 'width=800,height=600');
+		return false;
+	}
+
+	function openUpload() {
+		window.open("/upload", 'newwindow', 'width=800,height=600');
+		return false;
+	}
+
+	function openSorry() {
+		window.open("/sorry", 'newwindow', 'width=800,height=600');
+		return false;
+	}
+
+	function openStructDummy() {
+		window.open("/struct_dummy", 'newwindow', 'width=800,height=600');
+		return false;
+	}
+
+	function openStructNew() {
+		window.open("/struct_new", 'newwindow', 'width=800,height=600');
+		return false;
+	}
+
+	function openDummyUpload() {
+		window.open("/dummy_choice/dummy_upload", 'newwindow', 'width=800,height=600');
+		return false;
+	}
+	
+
+	function openCompare() {
+		window.open("/query", 'newwindow', 'width=800,height=600');
+		return false;
+	}
+
+	function getStaticUrl(filename) {
+        return "{{ url_for('static', filename='new_design/') }}" + filename;
+    }
+
+
+	function showGraphic(event,filename) {
+            var graphic = document.getElementById('graphic');
+            const imgSrc = getStaticUrl(filename);
+			graphic.src = imgSrc;
+			graphic.style.display = 'block';
+            graphic.style.left = event.pageX + 'px';
+            graphic.style.top = event.pageY + 'px';
+        }
+
+        function hideGraphic() {
+            document.getElementById('graphic').style.display = 'none';
+        }
+
+	
+</script>
+
+
+
+</head>
+
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+		<th width="50" scope="row">&nbsp;</th>
+      <td><a href="/"><img src="{{ url_for('static', filename='new_design/' + 'logo.svg') }}" width="120" height="60" alt=""/></a></td>
+      <td width="50">&nbsp;</td>
+      <td><span style="color: green;"><a href="/">Home</a></span></td>
+      <td width="20">&nbsp;</td>
+      <td><a href="/tree"><greentext>The Tree of Robots</greentext></a></td>
+      <td width="20">&nbsp;</td>
+      <td><a href="/process">Process Database</a></td>
+      <td width="20">&nbsp;</td>
+      <td><a href="/metrics">Metrics Definitions</a></td>
+      <td width="1030">&nbsp;</td>
+      <td><a href="/imprint">Imprint</a></td>
+      <td width="20">&nbsp;</td>
+      <td><a href="/privacy">Privacy policy</a></td>
+	  </tr>
+  </tbody>
+</table>
+
+<!-- <map name="Map">
+	<area shape="circle" coords="673,169,37" href="#" onmouseover="showGraphic(event,'robot_fe.png')" onmouseout="hideGraphic()" target="_blank">
+	<area shape="circle" coords="606,121,39" href="#" onmouseover="showGraphic(event,'robot_fe.png')" onmouseout="hideGraphic()" target="_blank">
+	<area shape="circle" coords="533,168,34" href="#" onmouseover="showGraphic(event,'robot_fe.png')" onmouseout="hideGraphic()" target="_blank">
+	
+</map>-->
+
+<table border="0" align="center" cellpadding="0" cellspacing="0" id="1">
+  <tbody>
+    <tr>
+		<td width="10">&nbsp;</td>
+      <td><img src="{{url_for('static', filename='new_design/' + 'tree.png') }}" alt="" width="900" height="700" usemap="#Map"/></td>
+	<!--<td><div class="container">
+		<img src="{{ url_for('static', filename='new_design/' + 'tree.png') }}" alt="Fixed Image" width="800" height="800" usemap="#Map"/>
+		<img class="graphic" id="graphic" src="" alt="Hover Image" class="hover-image" width="400" height="400" />
+    </div></td>-->
+	
+	  <td width="1">&nbsp;</td>
+		 <td width="500">&nbsp;
+		   <table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
+		     <tbody>
+				<tr></tr>
+					<td><table border="0" align="center" cellpadding="0" cellspacing="0">
+					  <tbody>
+						<tr>
+						  <td align="center"><strong><a href="#" onclick="openCompare()"><greentext>Compare</greentext></a></strong></td>
+						</tr>
+						<tr>
+						  <td align="center">Compare up to three robots. </td>
+					   
+					  </tbody>
+					</table></td>
+				  </tr>
+		       <tr>
+		         <td height="50"><img src="{{url_for('static', filename='new_design/' + 'separate.png') }}" width="500" height="2" alt=""/></td>
+	           </tr>
+				<tr>
+					<td><table border="0" align="center" cellpadding="0" cellspacing="0">
+					  <tbody>
+						<tr>
+						  <td align="center"><strong><a href="#" onclick="openDummyEntry()"><greentext>Add fictional robot</greentext></a></strong></td>
+						</tr>
+						<tr>
+						  <td align="center">Test the genus classification using a random generated robot. </td>
+
+					  </tbody>
+					</table></td>
+				  </tr>
+		       <tr>
+		         <td height="50"><img src="{{url_for('static', filename='new_design/' + 'separate.png') }}" width="500" height="2" alt=""/></td>
+	           </tr>
+		       <tr>
+		         <td><table border="0" align="center" cellpadding="0" cellspacing="0">
+		           <tbody>
+		             <tr>
+		               <td align="center"><strong><a href="#" onclick="openDummyUpload()"><greentext>Check my robot's genus</greentext></a></strong></td>
+	                 </tr>
+		             <tr>
+		               <td align="center">Add own robot by uploading metrics. Upload a zip-folder containing a txt-file withs all <a onclick="openStructDummy()"><greentext>structured</greentext></a> measurement data with following structure according to <a href="{{ url_for('download_dummy', filename='example_dummy_w_metrics'+'.zip') }}"><orangetext>example</orangetext></a> 
+	                   and the relevant <a href="/metrics"><orangetext>metrics definition</orangetext></a>.</td>
+	                
+					
+					
+					</tr>
+		             <tr>
+		               <td>&nbsp;</td>
+	                 </tr>
+		             <tr>
+		               <!--<td height="30"><table border="0" align="center" cellpadding="0" cellspacing="0">
+		                 <tbody>
+		                   <tr>
+		                     <td width="122" height="30" align="center" ><a href="{{url_for('static', filename='new_design/' + 'robot01.html') }}">Upload</a></td>
+		                     <td><img src="{{url_for('static', filename='new_design/' + 'arrow.png') }}" width="50" height="20" alt=""/></td>
+		                     <td width="122" height="30" align="center" ><a href="{{url_for('static', filename='new_design/' + 'robot01.html') }}">Submit</a></td>
+	                        </tr>
+	                      </tbody>
+	                   </table></td> -->
+	                 </tr>
+	               </tbody>
+	             </table></td>
+	           </tr>
+		       <tr>
+		         <td height="50"><img src="{{url_for('static', filename='new_design/' + 'separate.png') }}" width="500" height="2" alt=""/></td>
+	           </tr>
+		       <tr>
+		         <td><table border="0" align="center" cellpadding="0" cellspacing="0">
+		           <tbody>
+		             <tr>
+		               <td align="center"><strong>
+						<a href="#" onclick="openUpload()"><greentext>Contribute a new robot to the tree</greentext></a>
+		                 </strong></td>
+	                 </tr>
+		             <tr>
+		               <td align="left">1. Upload zip folder containing all <a href="#" onclick="openStructNew()"><greentext>structured</greentext></a> metrics raw data, <a href="{{ url_for('download', filename='new_robot'+'.zip') }}">
+	                    <orangetext>example</orangetext></a> 
+						 <br>2. Check out the robots result.
+		                 <br>3. <a href="#" onclick="openSorry()"><greentext>Request</greentext></a> verification and permanent addition.
+	                   </td>
+	                 </tr>
+		             <tr>
+		               <td>&nbsp;</td>
+	                 </tr>
+		             <tr>
+		               <td height="30"><table border="0" align="center" cellpadding="0" cellspacing="0">
+		                 <tbody>
+		                   <tr>
+							<!-- <td width="122" height="30" align="center">
+								<form action="/upload_result_new" enctype="multipart/form-data">
+									<input type="file" name="file" accept=".zip">
+									<button type="submit">Upload</button>
+								</form>
+							</td> -->
+							<!--<td width="122" height="30" align="center" >Upload</td>
+							
+		                     <td><img src="{{url_for('static', filename='new_design/' + 'arrow.png') }}" width="50" height="20" alt=""/></td>
+		                     <td width="122" height="30" align="center" style="color: grey;">Check</td>
+		                     <td align="center" ><img src="{{url_for('static', filename='new_design/' + 'arrow.png') }}" width="50" height="20" alt=""/></td>
+		                     <td width="122" align="center" ><a href="{{url_for('static', filename='new_design/' + 'robot01.html') }}">Submit</a></td> -->
+	                        </tr>
+	                      </tbody>
+		                 </table></td>
+	                 </tr>
+	               </tbody>
+	             </table></td>
+	           </tr>
+	         </tbody>
+      </table></td>
+    </tr>
+  </tbody>
+</table>
+<table width="1500" border="0">
+  <tbody>
+    <tr> </tr>
+  </tbody>
+</table>
+
+<map name="map1a">
+  <area shape="circle" coords="117,54,38" href="{{url_for('static', filename='new_design/' + 'robot01.html') }}" target="_blank">
+</map>
+
+<map name="Map"><area shape="circle" coords="773,230,37" href="#" onclick="openFigure('8')" target="_blank"><area shape="circle" coords="736,131,39" href="#" onclick="openFigure('1')" target="_blank"><area shape="circle" coords="633,188,34" href="#" onclick="openFigure('2')" target="_blank"><area shape="circle" coords="514,80,35" href="#" onclick="openFigure('9')" target="_blank"><area shape="circle" coords="406,192,40" href="#" onclick="openFigure('4')" target="_blank"><area shape="circle" coords="616,98,30" href="#" onclick="openFigure('10')" target="_blank"><area shape="circle" coords="271,230,32" href="#" onclick="openFigure('7')" target="_blank"><area shape="circle" coords="300,121,35" href="#" onclick="openFigure('5')" target="_blank"><area shape="circle" coords="370,60,34" href="#" onclick="openFigure('3')" target="_blank"><area shape="circle" coords="181,162,35" href="#" onclick="openFigure('6')" target="_blank"> <!--<area shape="circle" coords="64,179,34" href="#" onclick="openFigure()" target="_blank"> -->
+  <!--<area shape="circle" coords="137,68,34" href="#" onclick="openFigure('14')" target="_blank">-->
+  <area shape="circle" coords="227,40,38" href="#" onclick="openFigure('11')" target="_blank">
+  <!--<area shape="circle" coords="80,107,32" href="#" onclick="openFigure('13')" target="_blank">-->
+</map> 
+
+
+    
+
+
+
+</body>
+</html>

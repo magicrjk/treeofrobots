@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="TM5-700" serial_number = "5157032006" system_version="Rev.1.80.5300" datasheet="https://www.tm-robot.com/en/tm5-700/">
+	<link name="tm5_link1" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="tm5_link2" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="tm5_link3" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="tm5_link4" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="tm5_link5" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="tm5_link6" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="tm5_link7" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+
+	<link name="tm5_link8" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+
+	<joint name="tm5_joint1" parent_link="tm5_link1" child_link="tm5_link2"/>
+	<joint name="tm5_joint2" parent_link="tm5_link2" child_link="tm5_link3"/>
+	<joint name="tm5_joint3" parent_link="tm5_link3" child_link="tm5_link4"/>
+	<joint name="tm5_joint4" parent_link="tm5_link4" child_link="tm5_link5"/>
+	<joint name="tm5_joint5" parent_link="tm5_link5" child_link="tm5_link6"/>
+	<joint name="tm5_joint6" parent_link="tm5_link6" child_link="tm5_link7"/>
+	<joint name="tm5_joint7" parent_link="tm5_link7" child_link="tm5_link8"/>
+
+	<sensor name="sensor1_torque" location="tm5_joint1" class="joint_torque" type="none"/>
+	<sensor name="sensor2_torque" location="tm5_joint2" class="joint_torque" type="none"/>
+	<sensor name="sensor3_torque" location="tm5_joint3" class="joint_torque" type="none"/>
+	<sensor name="sensor4_torque" location="tm5_joint4" class="joint_torque" type="none"/>
+	<sensor name="sensor5_torque" location="tm5_joint5" class="joint_torque" type="none"/>
+	<sensor name="sensor6_torque" location="tm5_joint6" class="joint_torque" type="none"/>
+	<sensor name="sensor7_torque" location="tm5_joint7" class="joint_torque" type="none"/>
+
+	<sensor name="sensor1_touch" location="tm5_link1" class="touch" type="none"/>
+
+	<sensor name="sensor1_lnkmotion" location="tm5_link1" class="link_motion" type="none"/>
+	<sensor name="sensor2_lnkmotion" location="tm5_link2" class="link_motion" type="none"/>
+	<sensor name="sensor3_lnkmotion" location="tm5_link3" class="link_motion" type="none"/>
+	<sensor name="sensor4_lnkmotion" location="tm5_link4" class="link_motion" type="none"/>
+	<sensor name="sensor5_lnkmotion" location="tm5_link5" class="link_motion" type="none"/>
+	<sensor name="sensor6_lnkmotion" location="tm5_link6" class="link_motion" type="none"/>
+	<sensor name="sensor7_lnkmotion" location="tm5_link7" class="link_motion" type="none"/>
+	<sensor name="sensor8_lnkmotion" location="tm5_link8" class="link_motion" type="none"/>
+
+	<sensor name="sensor1_jntmotion" location="tm5_joint1" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor2_jntmotion" location="tm5_joint2" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor3_jntmotion" location="tm5_joint3" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor4_jntmotion" location="tm5_joint4" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor5_jntmotion" location="tm5_joint5" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor6_jntmotion" location="tm5_joint6" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor7_jntmotion" location="tm5_joint7" class="joint_motion" type="motor_encoders"/>
+
+	<sensor name="sensor1_current" location="tm5_joint1" class="current" type="hall_sensors"/>
+	<sensor name="sensor2_current" location="tm5_joint2" class="current" type="hall_sensors"/>
+	<sensor name="sensor3_current" location="tm5_joint3" class="current" type="hall_sensors"/>
+	<sensor name="sensor4_current" location="tm5_joint4" class="current" type="hall_sensors"/>
+	<sensor name="sensor5_current" location="tm5_joint5" class="current" type="hall_sensors"/>
+	<sensor name="sensor6_current" location="tm5_joint6" class="current" type="hall_sensors"/>
+	<sensor name="sensor7_current" location="tm5_joint7" class="current" type="hall_sensors"/>
+
+	<sensor name="sensor7_wrist" location="tm5_joint7" class="wrist_wrench" type="none"/>
+
+	<actuation name="control_box" class="electronics" type="remote"/>
+	<actuation name="transmission" class="transmission" type="gear"/>
+	<actuation name="drive" class="drive" type="bldc_motor"/>
+	<actuation name="technology" class="technology" type="electromechanical"/>
+
+	<control name="motion" class="motion" type="?"/>
+	<control name="handguiding" class="handguiding" type="?"/>
+	<control name="tactile" class="tactile" type="force"/>
+	
+
+	<base type="fixed" />
+	<top type="fixed" />
+</robot>

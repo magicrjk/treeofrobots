@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="M0609" serial_number= "T1Z4G4" system_version="GV02100000-55" datasheet = "https://www.doosanrobotics.com/en/products/series/m0609">
+	<link name="m0609_link1" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="m0609_link2" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="m0609_link3" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="m0609_link4" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="m0609_link5" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="m0609_link6" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="m0609_link7" type="exo-tube">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+
+
+	<joint name="m0609_joint1" parent_link="m0609_link1" child_link="m0609_link2"/>
+	<joint name="m0609_joint2" parent_link="m0609_link2" child_link="m0609_link3"/>
+	<joint name="m0609_joint3" parent_link="m0609_link3" child_link="m0609_link4"/>
+	<joint name="m0609_joint4" parent_link="m0609_link4" child_link="m0609_link5"/>
+	<joint name="m0609_joint5" parent_link="m0609_link5" child_link="m0609_link6"/>
+	<joint name="m0609_joint6" parent_link="m0609_link6" child_link="m0609_link7"/>
+
+
+	<sensor name="sensor1_torque" location="m0609_joint1" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor2_torque" location="m0609_joint2" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor3_torque" location="m0609_joint3" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor4_torque" location="m0609_joint4" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor5_torque" location="m0609_joint5" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor6_torque" location="m0609_joint6" class="joint_torque" type="strain_gauge"/>
+
+
+	<sensor name="sensor1_touch" location="m0609_link1" class="touch" type="none"/>
+
+	<sensor name="sensor1_lnkmotion" location="m0609_link1" class="link_motion" type="none"/>
+	<sensor name="sensor2_lnkmotion" location="m0609_link2" class="link_motion" type="none"/>
+	<sensor name="sensor3_lnkmotion" location="m0609_link3" class="link_motion" type="none"/>
+	<sensor name="sensor4_lnkmotion" location="m0609_link4" class="link_motion" type="none"/>
+	<sensor name="sensor5_lnkmotion" location="m0609_link5" class="link_motion" type="none"/>
+	<sensor name="sensor6_lnkmotion" location="m0609_link6" class="link_motion" type="none"/>
+	<sensor name="sensor7_lnkmotion" location="m0609_link7" class="link_motion" type="none"/>
+
+
+	<sensor name="sensor1_jntmotion" location="m0609_joint1" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor2_jntmotion" location="m0609_joint2" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor3_jntmotion" location="m0609_joint3" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor4_jntmotion" location="m0609_joint4" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor5_jntmotion" location="m0609_joint5" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor6_jntmotion" location="m0609_joint6" class="joint_motion" type="motor_encoders"/>
+
+
+	<sensor name="sensor1_current" location="m0609_joint1" class="current" type="hall_sensors"/>
+	<sensor name="sensor2_current" location="m0609_joint2" class="current" type="hall_sensors"/>
+	<sensor name="sensor3_current" location="m0609_joint3" class="current" type="hall_sensors"/>
+	<sensor name="sensor4_current" location="m0609_joint4" class="current" type="hall_sensors"/>
+	<sensor name="sensor5_current" location="m0609_joint5" class="current" type="hall_sensors"/>
+	<sensor name="sensor6_current" location="m0609_joint6" class="current" type="hall_sensors"/>
+
+
+	<sensor name="sensor7_wrist" location="m0609_joint7" class="wrist_wrench" type="strain_gauge"/>
+
+	<actuation name="control_box" class="electronics" type="remote"/>
+	<actuation name="transmission" class="transmission" type="gear"/>
+	<actuation name="drive" class="drive" type="bldc_motor"/>
+	<actuation name="technology" class="technology" type="electromechanical"/>
+
+	<control name="motion" class="motion" type="?"/>
+	<control name="handguiding" class="handguiding" type="?"/>
+	<control name="tactile" class="tactile" type="?"/>
+	
+
+	<base type="fixed" />
+	<top type="fixed" />
+</robot>

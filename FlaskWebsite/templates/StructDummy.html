@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new_design/' + 'style.css') }}">
+<meta charset="utf-8">
+<title>Struct_New</title>
+<style type="text/css">
+body,td,th {
+
+}
+        .center-table {
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+        }
+        .center-table td, .center-table th {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+</style>
+</head>
+<body>
+<table  width="100%" border="0">
+    <td width="100">
+
+    </td>
+    <tbody>
+        <tr>
+            <td height="20"></td>
+        </tr>
+    <tr>
+        <td align="center"><strong>Structure Robot Metrics File</strong></td>
+    </tr>
+    <tr>
+        <td align="center" height="100%"><img src="{{url_for('static', filename='new_design/' + 'separate.png') }}" width="500" height="2" alt=""/></td>
+    </tr>
+    </tbody>
+</table>
+<table class="center-table" border="1">
+            <tr>
+                <td align="center" colspan="2">
+                    <p>file name:  {your_name}.txt</p>
+                    
+                </td>
+                </tr>
+                
+            <!--<tr>
+                <td><b>Number</b></td>
+                <td><b>Metric</b></td>
+            </tr>-->
+            <tr>
+                <td>1</td>
+                <td>Force Sensing Accuracy [N]</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Force Sensing Precision [N]</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Force Sensing Resolution [N]</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Force Sensing Time Drift 1 [N]</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Force Sensing Time Drift 2 [N]</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Force Sensing Time Drift 3 [N]</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Force Sensing Time Drift 4 [N]</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Force Control Accuracy [N]</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Force Control Precision [N]</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Force Control Resolution [N]</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Force Controller Bandwidth [Hz]</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Static Force Settling Time [s]</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Minimum Applicable Force [N]</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Internal Reading Material Variation Stability [%]</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Static Force Overshoot [N]</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Impact Stability [%]</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Guiding Force in Free Guide [N]</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Guiding Force Deviation in Free Guide [N]</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Minimum Motion Force in Free Guide [N]</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Guiding Energy in Free Guide [mJ]</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Maneuver Effort to 250mm/s [mJ]</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Tactile Contact Sensitivity [%]</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Contact Sensitivity [%]</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Transient Constrained Contact Force ISO Conformance [%]</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>Quasi-Static Constrained Contact Force ISO Conformance [%]</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Motion Pose Repeatability [mm]</td>
+            </tr>
+            
+        </table>
+        <table align=" center" width = "100%">
+            <tr>
+                <td align="center" colspan="2">
+                    <p>Please use and adapt the provided <a href="{{ url_for('download_dummy', filename='example_dummy_w_metrics'+'.zip') }}"><orangetext>example</orangetext></a> file</p>
+                </td>
+            </tr>
+        </table>
+        
+    
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new_design/' + 'style.css') }}">
+<meta charset="utf-8">
+<title>Struct_New</title>
+<style type="text/css">
+body,td,th {
+
+}
+</style>
+</head>
+<body>
+<table width="100%" border="0">
+    <tbody>
+        <tr>
+            <td height="100"></td>
+        </tr>
+    <tr>
+        <td align="center"><strong>Structure New Robot</strong></td>
+    </tr>
+    <tr>
+        <td align="center" height="50"><img src="{{url_for('static', filename='new_design/' + 'separate.png') }}" width="500" height="2" alt=""/></td>
+    </tr>
+    <tr>
+        <td align="center">
+            <p>file name can be anything</p>
+    
+            <p>The uploaded files needs to follow this structure:</p>
+            <p style="text-align: left;">    
+            <md-block>
+            ├── Force_Controller <br>
+            │          ├── AcF_PcF_REScF_OV_TS <br>
+            │          ├── Bc <br>
+            │          ├── MAF <br>
+            │          └── MVC_IS <br>
+            │              ├── Dynamic_contact <br>
+            │              │      ├── alu <br>
+            │              │      ├── blue <br>
+            │              │      ├── foam <br>
+            │              │      ├── PE <br>
+            │              │      └── yellow <br>
+            │              └── Static_contact <br>
+            │                      ├── alu <br>
+            │                      ├── blue <br>
+            │                      ├── foam <br>
+            │                      ├── PE <br>
+            │                      └── yellow <br>
+            ├── Force_Reaction <br>
+            │          └── contactsens <br>
+            ├── Force_Sensing <br>
+            │          ├── accrepres <br>
+            │          └── timeconsistency <br>
+            ├── Human_Safety <br>
+            │          ├── colltests <br>
+            ├── Motion_Performance <br>
+            │          └── motion_performance <br>
+            ├── Robot_Ext_URDFs <br>
+            └── Teaching <br>
+                       ├── GF_GD_GE_ME <br>
+                       └── MF <br>
+
+            
+            </md-block>
+
+            <p> For the file names please refer to the provided <a href="{{ url_for('download', filename='new_robot'+'.zip') }}">
+                <orangetext>example</orangetext></a>. </p>
+
+            </p>
+
+        </td>
+     </tr>
+    </tbody>
+</table>
+</body>
+</html>

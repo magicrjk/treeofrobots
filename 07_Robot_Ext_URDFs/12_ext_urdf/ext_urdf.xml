@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="KR 10" serial_number = "kukaexample" system_version="-" datasheet ="-">
+	<link name="kr10_link1" type="solid">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="kr10_link2" type="solid">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="kr10_link3" type="solid">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="kr10_link4" type="solid">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="kr10_link5" type="solid">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="kr10_link6" type="solid">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="kr10_link7" type="solid">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+
+	<link name="kr10_link8" type="solid">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+
+	<joint name="kr10_joint1" parent_link="kr10_link1" child_link="kr10_link2"/>
+	<joint name="kr10_joint2" parent_link="kr10_link2" child_link="kr10_link3"/>
+	<joint name="kr10_joint3" parent_link="kr10_link3" child_link="kr10_link4"/>
+	<joint name="kr10_joint4" parent_link="kr10_link4" child_link="kr10_link5"/>
+	<joint name="kr10_joint5" parent_link="kr10_link5" child_link="kr10_link6"/>
+	<joint name="kr10_joint6" parent_link="kr10_link6" child_link="kr10_link7"/>
+	<joint name="kr10_joint7" parent_link="kr10_link7" child_link="kr10_link8"/>
+
+	<sensor name="sensor1_torque" location="kr10_joint1" class="joint_torque" type="none"/>
+	<sensor name="sensor2_torque" location="kr10_joint2" class="joint_torque" type="none"/>
+	<sensor name="sensor3_torque" location="kr10_joint3" class="joint_torque" type="none"/>
+	<sensor name="sensor4_torque" location="kr10_joint4" class="joint_torque" type="none"/>
+	<sensor name="sensor5_torque" location="kr10_joint5" class="joint_torque" type="none"/>
+	<sensor name="sensor6_torque" location="kr10_joint6" class="joint_torque" type="none"/>
+	<sensor name="sensor7_torque" location="kr10_joint7" class="joint_torque" type="none"/>
+
+	<sensor name="sensor1_touch" location="kr10_link1" class="touch" type="capacitive"/>
+
+	<sensor name="sensor1_lnkmotion" location="kr10_link1" class="link_motion" type="none"/>
+	<sensor name="sensor2_lnkmotion" location="kr10_link2" class="link_motion" type="none"/>
+	<sensor name="sensor3_lnkmotion" location="kr10_link3" class="link_motion" type="none"/>
+	<sensor name="sensor4_lnkmotion" location="kr10_link4" class="link_motion" type="none"/>
+	<sensor name="sensor5_lnkmotion" location="kr10_link5" class="link_motion" type="none"/>
+	<sensor name="sensor6_lnkmotion" location="kr10_link6" class="link_motion" type="none"/>
+	<sensor name="sensor7_lnkmotion" location="kr10_link7" class="link_motion" type="none"/>
+	<sensor name="sensor8_lnkmotion" location="kr10_link8" class="link_motion" type="none"/>
+
+	<sensor name="sensor1_jntmotion" location="kr10_joint1" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor2_jntmotion" location="kr10_joint2" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor3_jntmotion" location="kr10_joint3" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor4_jntmotion" location="kr10_joint4" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor5_jntmotion" location="kr10_joint5" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor6_jntmotion" location="kr10_joint6" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor7_jntmotion" location="kr10_joint7" class="joint_motion" type="motor_encoders"/>
+
+	<sensor name="sensor1_current" location="kr10_joint1" class="current" type="hall_sensors"/>
+	<sensor name="sensor2_current" location="kr10_joint2" class="current" type="hall_sensors"/>
+	<sensor name="sensor3_current" location="kr10_joint3" class="current" type="hall_sensors"/>
+	<sensor name="sensor4_current" location="kr10_joint4" class="current" type="hall_sensors"/>
+	<sensor name="sensor5_current" location="kr10_joint5" class="current" type="hall_sensors"/>
+	<sensor name="sensor6_current" location="kr10_joint6" class="current" type="hall_sensors"/>
+	<sensor name="sensor7_current" location="kr10_joint7" class="current" type="hall_sensors"/>
+
+	<sensor name="sensor7_wrist" location="kr10_joint7" class="wrist_wrench" type="none"/>
+
+	<actuation name="control_box" class="electronics" type="remote"/>
+	<actuation name="transmission" class="transmission" type="gear"/>
+	<actuation name="drive" class="drive" type="bldc_motor"/>
+	<actuation name="technology" class="technology" type="electromechanical"/>
+
+	<control name="motion" class="motion" type="?"/>
+	<control name="handguiding" class="handguiding" type="none"/>
+	<control name="tactile" class="tactile" type="none"/>
+	
+
+	<base type="fixed" />
+	<top type="fixed" />
+</robot>

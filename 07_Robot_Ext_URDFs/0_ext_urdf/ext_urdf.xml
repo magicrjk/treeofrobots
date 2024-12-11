@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="Franka Emika robot" serial_number="289830-1324461/289830-1326190" system_version="4.0.3" datasheet="https://download.franka.de/documents/100010_Product%20Manual%20Franka%20Emika%20Robot_10.21_DE.pdf">
+	<link name="panda_link1" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="panda_link2" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="panda_link3" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="panda_link4" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="panda_link5" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="panda_link6" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+	<link name="panda_link7" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+
+	<link name="panda_link8" type="exo-shell">
+		<inertial mass="0" pos="0 0 0" fullinertia="0" />
+	</link>
+
+	<joint name="panda_joint1" parent_link="panda_link1" child_link="panda_link2"/>
+	<joint name="panda_joint2" parent_link="panda_link2" child_link="panda_link3"/>
+	<joint name="panda_joint3" parent_link="panda_link3" child_link="panda_link4"/>
+	<joint name="panda_joint4" parent_link="panda_link4" child_link="panda_link5"/>
+	<joint name="panda_joint5" parent_link="panda_link5" child_link="panda_link6"/>
+	<joint name="panda_joint6" parent_link="panda_link6" child_link="panda_link7"/>
+	<joint name="panda_joint7" parent_link="panda_link7" child_link="panda_link8"/>
+
+	<sensor name="sensor1_torque" location="panda_joint1" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor2_torque" location="panda_joint2" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor3_torque" location="panda_joint3" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor4_torque" location="panda_joint4" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor5_torque" location="panda_joint5" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor6_torque" location="panda_joint6" class="joint_torque" type="strain_gauge"/>
+	<sensor name="sensor7_torque" location="panda_joint7" class="joint_torque" type="strain_gauge"/>
+
+	<sensor name="sensor1_jntmotion" location="panda_joint1" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor2_jntmotion" location="panda_joint2" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor3_jntmotion" location="panda_joint3" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor4_jntmotion" location="panda_joint4" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor5_jntmotion" location="panda_joint5" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor6_jntmotion" location="panda_joint6" class="joint_motion" type="motor_encoders"/>
+	<sensor name="sensor7_jntmotion" location="panda_joint7" class="joint_motion" type="motor_encoders"/>
+
+	<sensor name="sensor1_current" location="panda_joint1" class="current" type="hall_sensors"/>
+	<sensor name="sensor2_current" location="panda_joint2" class="current" type="hall_sensors"/>
+	<sensor name="sensor3_current" location="panda_joint3" class="current" type="hall_sensors"/>
+	<sensor name="sensor4_current" location="panda_joint4" class="current" type="hall_sensors"/>
+	<sensor name="sensor5_current" location="panda_joint5" class="current" type="hall_sensors"/>
+	<sensor name="sensor6_current" location="panda_joint6" class="current" type="hall_sensors"/>
+	<sensor name="sensor7_current" location="panda_joint7" class="current" type="hall_sensors"/>
+
+	<sensor name="sensor7_wrist" location="panda_joint7" class="wrist_wrench" type="none"/>
+
+	<actuation name="control_box" class="electronics" type="remote"/>
+	<actuation name="transmission" class="transmission" type="gear"/>
+	<actuation name="drive" class="drive" type="bldc_motor"/>
+	<actuation name="technology" class="technology" type="electromechanical"/>
+
+	<control name="motion" class="motion" type="?"/>
+	<control name="handguiding" class="handguiding" type="?"/>
+	<control name="tactile" class="tactile" type="?"/>
+	
+
+	<base type="fixed" />
+	<top type="fixed" />
+</robot>

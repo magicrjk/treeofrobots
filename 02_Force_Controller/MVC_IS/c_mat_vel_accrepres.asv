@@ -1,0 +1,228 @@
+%%%%%%%%%%%%%%%%%%%%%% CONTROLLER FORCE %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%Material Varitation Consistency, Impact Stability %%%%%%%%%%%%%%
+% contact: Robin Kirschner
+% This code evaluates the robot force control material variation
+% constistency (out_MVC) and impact stability (out_IS)
+% To add new robot use the following folder/data structure:
+% i_accrepres/j_files/Static_contact/material/ForceData_k where i = robot number, j = [C N] and k
+% = 0:2 and STatic and Dynamic contact are relevant
+
+
+function [out_MVC, out_IS] = c_mat_vel_accrepres(i)
+
+%internal readings
+
+margin = 0.1;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%
+data = 0;
+kk = 0;
+jj = 0;
+settled = 0;
+trial_settled=0;
+
+forces = struct();
+
+
+Fz = 0;
+F_des = 8;
+
+if i == 9
+    setup = 0;
+else
+    setup = 1;
+end
+
+if setup == 0
+
+    factor = 800;
+    factor_2 = 200;
+    threshold = 6500;
+    if i == 8
+        factor = 700;
+        factor_2 = 200;
+    end
+
+elseif setup == 1
+
+    factor = 30;
+    factor_2 = 30;
+    threshold = 80;
+    if i == 1
+        factor = 1000;
+        factor_2 = 3000;
+        threshold = 3500;
+    end
+
+end
+
+
+for kk = 0:1    %adapt for contact speed
+
+    if kk == 0
+        velocity = ['Static'];
+    elseif kk == 1
+        velocity = ['Dynamic'];
+    end
+
+    velocity_series_name = [ velocity '_contact'];
+
+
+    for jj =   0:4    %adapt for material
+
+        na = 0; %data not available
+
+        if jj == 0
+            mat = ['alu'];
+        elseif jj == 1
+            mat = ['PE'];
+        elseif jj == 2
+            mat = ['blue'];
+        elseif jj == 3
+            mat = ['yellow'];
+        elseif jj == 4
+            mat = ['foam'];
+        end
+
+        material_series_name = fullfile("02_Force_Controller","MVC_IS", num2str(i)+"_c_accrepres", "C_files" , velocity_series_name, mat);
+        addpath(material_series_name);
+
+        k_end = 2;
+
+
+        for k = 0:k_end
+
+
+            if setup == 0
+
+                filename = ['ForceData_' num2str(k) '.tdms'];
+                exist(filename, 'file');
+
+                if exist(fullfile(material_series_name , filename), 'file') == 0
+                    na = 1;
+                else
+
+                    data = TDMS_getStruct([material_series_name '\' filename]);
+
+                    Fz_1 = abs(data.Measuring_values.Chan__5_3.data) ;
+
+
+
+                end
+
+            else
+                if i == 0 || i == 7
+                    filename = ['ForceData_' num2str(k) '.txt'];
+                    exist(filename, 'file');
+
+                    if exist(fullfile(material_series_name , filename), 'file') == 0
+                        na = 1;
+                    else
+                        data = readtable([material_series_name '\' filename]);
+                        Fz_1 = abs(data.Var4) ;
+                    end
+
+                elseif i == 1 %LBR
+                    filename = ['ForceData_' num2str(k) '.log'];
+                    exist(filename, 'file');
+
+                    if exist(fullfile(material_series_name , filename), 'file') == 0
+                        na = 1;
+                    else
+                        data = readtable(filename, 'Headerlines', 1);
+                        Fz_1 = abs(data.Var21) ;
+                    end
+
+                elseif i == 8 %M0609
+                    filename = ['ForceData_' num2str(k) '.csv'];
+                    exist(filename, 'file');
+
+                    if exist(fullfile(material_series_name , filename), 'file') == 0
+                        na = 1;
+                    else
+
+                        data = readtable(filename, 'Headerlines', 1);
+
+                        Fz_1 = abs(data.Var3) ;
+                        factor_2 = 500;
+
+                    end
+
+                    %% for new entries only based on csv data
+                elseif i >10
+                    filename = ['ForceData_' num2str(k) '.csv'];
+                    ex = exist(filename, 'file');
+
+                    if ex == 0
+                        disp('missing a dataset for controller performance evaluation - mvc is')
+                        filename = ['ForceData_' num2str(k) '.txt'];
+                        ex_1 = exist(filename, 'file');
+                        if ex_1 == 0
+                            disp('missing a dataset for controller performance evaluation - acc rep res')
+                        else
+                            data = readtable(fullfile(material_series_name, filename));
+                            Fz_1 = abs(data.Var4) ;
+                        end
+                    else
+                        data = readtable(filename, 'Headerlines', h_lines);
+                        Fz_data = [data.Var2,data.Var3,data.Var4];
+                        Fz = sqrt(sum(Fz_data.^2,2));
+                        disp('evaluates the new robot')
+                    end
+
+
+                end
+            end
+
+            if na == 1
+                trial_settled(k+1) = 0;
+                Fz_1 = 0;
+            else
+                Fz_start = find(Fz_1==max(Fz_1),1)+factor;
+
+                if Fz_start > threshold %6500
+                    Fz_start = threshold; %6000;
+                end
+
+                Fz = Fz_1(Fz_start:(Fz_start+factor_2));
+
+                F_threshold_settle = mean(Fz)+margin*mean(Fz);
+                Fz_std = std(Fz);
+
+                if max(Fz) < F_threshold_settle
+                    trial_settled(k+1) = 1;
+                else
+                    trial_settled(k+1) = 0;
+                end
+            end
+
+
+        end
+
+        rmpath(material_series_name);
+
+
+        if sum(trial_settled) == (k_end+1) && mean(Fz)>0 && mean(Fz)>(0.8*8) && mean(Fz)<(1.2*8)
+            settled(jj+1,kk+1) = 1;
+        else
+            settled(jj+1,kk+1) = 0;
+        end
+
+        out_settled(i+1).robot(kk+1).velocity(jj+1).material(1) = settled(jj+1,kk+1);
+
+        %     figure(100+i)%(jj+1)
+        %
+        %                 plot(Fz_1(Fz_start:end))
+        %                 hold on
+
+    end
+end
+
+out_MVC = 100*sum([out_settled(i+1).robot(1).velocity.material])/5;
+out_IS = 100*sum([out_settled(i+1).robot(2).velocity.material])/5;
+
+
+
+

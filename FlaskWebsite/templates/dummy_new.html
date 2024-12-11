@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new_design/' + 'style.css') }}">
+<meta charset="utf-8">
+<title>fictional_robot_form</title>
+<style type="text/css">
+body,td,th {
+
+}
+</style>
+
+</head>
+
+<body>
+    <table width="100%" border="0">
+        <tbody>
+            <tr>
+                <td height="100"></td>
+            </tr>
+        <tr>
+            <td align="center"><strong>Select:</strong></td>
+        </tr>
+        <tr>
+            <td align="center" height="50"><img src="{{url_for('static', filename='new_design/' + 'separate.png') }}" width="500" height="2" alt=""/></td>
+        </tr>
+        
+        </tbody>
+    </table>
+    <table width="100%" border="0">
+        <tbody>
+            
+            <tr>
+                <td>
+    <form action="/dummy_choice/dummy/dummy_result" method="post">
+        <label for="text_input">Robot name:</label>
+        <input type="text" id="text_input" name="text_input"><br><br>
+
+        <label for="fs_dropdown">Force Sensing Quality:</label>
+        <select id="fs_dropdown" name="fs_dropdown">
+            <option value="none">None</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select><br><br>
+
+        <label for="fc_dropdown">Force Control Quality:</label>
+        <select id="fc_dropdown" name="fc_dropdown">
+            <option value="none">None</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select><br><br>
+
+        <label for="u_dropdown">Usability Quality:</label>
+        <select id="u_dropdown" name="u_dropdown">
+            <option value="none">None</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select><br><br>
+
+        <label for="fr_dropdown">Force Reaction Quality:</label>
+        <select id="fr_dropdown" name="fr_dropdown">
+            <option value="none">None</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select><br><br>
+        
+        <label for="s_dropdown">Safety Performance Quality:</label>
+        <select id="s_dropdown" name="s_dropdown">
+            <option value="none">None</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select><br><br>
+
+        <label for="m_dropdown">Motion Performance Quality:</label>
+        <select id="m_dropdown" name="m_dropdown">
+            <option value="none">None</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select><br><br>
+        <p>After clicking "submit", please wait up to <b>20s</b> while your request is processed.</p> 
+
+
+        <input type="submit" value="Submit">
+    </form>
+</td>
+</tr>
+
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new_design/' + 'style.css') }}">
+<meta charset="utf-8">
+<title>The Tree of Robots - Home</title>
+<style type="text/css">
+body,td,th {
+
+}
+
+
+</style>
+<script>
+  function openFigure(process_id) {
+		const url = `/process/example?process_id=${process_id}`;
+  		window.open(url, 'newwindow', 'width=800,height=600');
+    	
+		return false;}
+    function openUseCases() {
+		
+    window.open('/use_cases', 'newwindow', 'width=800,height=600');
+    
+  return false;
+	}
+</script>
+
+</head>
+
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th width="50" scope="row">&nbsp;</th>
+      <td><a href="/"><img src="{{ url_for('static', filename='new_design/' + 'logo.svg') }}" width="120" height="60" alt=""/></a></td>
+      <td width="50">&nbsp;</td>
+      <td><span style="color: green;"><a href="/">Home</a></span></td>
+      <td width="20">&nbsp;</td>
+      <td><a href="/tree">The Tree of Robots</a></td>
+      <td width="20">&nbsp;</td>
+      <td><a href="/process"><greentext>Process Database</greentext></a></td>
+      <td width="20">&nbsp;</td>
+      <td><a href="/metrics">Metrics Definitions</a></td>
+      <td width="1030">&nbsp;</td>
+      <td><a href="/imprint">Imprint</a></td>
+      <td width="20">&nbsp;</td>
+      <td><a href="/privacy">Privacy policy</a></td>
+	  </tr>
+  </tbody>
+</table>
+<table width="1500" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><img src="{{url_for('static', filename='new_design/' + 'database.png') }}" alt="" width="1500" height="700" usemap="#Map"/></td>
+    </tr>
+  </tbody>
+</table>
+<table width="1500" border="0">
+  <tbody>
+    <tr> </tr>
+  </tbody>
+</table>
+
+<map name="map1a">
+  <area shape="circle" coords="117,54,38" href="/robot" target="_blank">
+</map>
+
+<map name="Map"><area shape="circle" coords="1338,307,43" href="#" onclick="openFigure('6')" target="_blank"><area shape="circle" coords="1234,248,43" href="#" onclick="openFigure('5')" target="_blank"><area shape="circle" coords="1338,450,43" href="#" onclick="openFigure('7')" target="_blank"><area shape="circle" coords="1024,598,43" href="#" onclick="openFigure('9')" target="_blank"><area shape="circle" coords="1084,493,43" href="#" onclick="openFigure('8')" target="_blank"><area shape="circle" coords="692,493,43" href="#" onclick="openFigure('12')" target="_blank"><area shape="circle" coords="880,208,43" href="#" onclick="openFigure('4')" target="_blank"><area shape="circle" coords="824,104,43" href="#" onclick="openFigure('3')" target="_blank"><area shape="circle" coords="682,104,43" href="#" onclick="openFigure('2')" target="_blank"><area shape="circle" coords="623,209,43" href="#" onclick="openFigure('1')" target="_blank"><area shape="circle" coords="495,598,43" href="#" onclick="openFigure('11')" target="_blank"><area shape="circle" coords="434,494,43" href="#" onclick="openFigure('10')" target="_blank"><area shape="circle" coords="267,250,43" href="#" onclick="openFigure('13')" target="_blank"><area shape="circle" coords="161,307,43" href="#" onclick="openFigure('14')" target="_blank"><area shape="circle" coords="160,447,43" href="#" onclick="openFigure('15')" target="_blank">
+  <area shape="circle" coords="265,504,43" href="#" onclick="openFigure('16')" target="_blank"> <area shape="circle" coords="645,598,43" href="#" onclick="openFigure('17')" target="_blank"><area shape="circle" coords="755,368,80" href="#" onclick="openUseCases()" target="_blank">
+</map>
+</body>
+</html>
